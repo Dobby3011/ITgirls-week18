@@ -20,21 +20,21 @@ function createTask() {
         taskInput.value = '';
         document.querySelector(".paragraph").style.display = "none";
 
-        if (taskText.trim() !== '') {
-            let tasks = localStorage.getItem('tasks');
-            tasks = tasks ? JSON.parse(tasks) : [];
-            tasks.push(taskText);
-            localStorage.setItem("tasks", JSON.stringify(tasks));
+        //if (taskText.trim() !== '') {
+        let tasks = localStorage.getItem('tasks');
+        tasks = tasks ? JSON.parse(tasks) : [];
+        tasks.push(taskText);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
 
-        } else {
-            tasks = [];
-        }
+        /* } else {
+             tasks = [];
+         }*/
     }
 }
 
 // Очистить список
 const close = document.getElementsByClassName("clear");
-for (i = 0; i < close.length; i++) {
+for (let i = 0; i < close.length; i++) {
     close[i].onclick = function () {
         const div = document.querySelector(".list");
         div.style.display = "none";
